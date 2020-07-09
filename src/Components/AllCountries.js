@@ -58,10 +58,7 @@ export default function AllCountries() {
         getData();
     }, [])
 
-    if (!globalData) {
-        return <CircularProgress />;
-      }
-      else
+   
     return (
         <div className={classes.root}>
             <TableContainer component={Paper}>
@@ -81,6 +78,10 @@ export default function AllCountries() {
                 </TableHead>
                 <TableBody>
                     {globalData.map((key, ind) => {
+                         if (!globalData[ind].total_deaths) {
+                            return <CircularProgress />;
+                          }
+                          else
                     return (
                     <TableRow >
                          <TableCell component="th" scope="row">
