@@ -78,10 +78,7 @@ export default function AllCountries() {
                 </TableHead>
                 <TableBody>
                     {globalData.map((key, ind) => {
-                         if (!globalData[ind].total_deaths) {
-                            return <CircularProgress />;
-                          }
-                          else
+                         
                     return (
                     <TableRow >
                          <TableCell component="th" scope="row">
