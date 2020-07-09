@@ -7,19 +7,21 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 1000,
     margin: "0 auto",
-    marginTop: 50
+    marginTop: 50,
+    marginBottom:60
     //flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    border: "10px solid rgba(0, 0, 255, 0.5)"
   },
   title:{
-    color:"blue"
+    color:"rgba(0, 0, 255, 0.5)"
   },
   values:{
-    color:"black"
+    color:"rgba(0, 0, 0, 0.7)"
   }
 }));
 

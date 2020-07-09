@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         fontWeight:"bold",
-        color: theme.palette.text.secondary
+        color: theme.palette.text.secondary,
     },
     table: {
-        minWidth: 650
+        minWidth: 650,
+        border: "10px solid rgba(0, 0, 255, 0.5)"
     },
     title: {
         color: "blue"
@@ -56,6 +58,10 @@ export default function AllCountries() {
         getData();
     }, [])
 
+    if (!globalData) {
+        return <CircularProgress />;
+      }
+      else
     return (
         <div className={classes.root}>
             <TableContainer component={Paper}>
